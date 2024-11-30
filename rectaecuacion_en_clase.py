@@ -23,7 +23,7 @@ def plotfun():
     # Graficar y = x^3 - 3x - 1
     glColor3f(1.0, 0.0, 0.0)  # Color rojo
     glBegin(GL_POINTS)
-    for x in arange(-5.0, 5.0, 0.01):
+    for x in arange(-5.0, 5.0, 0.001):
         y = x**3 - 3*x - 1
         glVertex2f(x, y)
     glEnd()
@@ -31,7 +31,7 @@ def plotfun():
     # Graficar y = sin(x)
     glColor3f(0.0, 0.0, 1.0)  # Color azul
     glBegin(GL_POINTS)
-    for x in arange(-5.0, 5.0, 0.01):
+    for x in arange(-5.0, 5.0, 0.001):
         y = sin(x)
         glVertex2f(x, y)
     glEnd()

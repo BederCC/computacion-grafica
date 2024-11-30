@@ -10,7 +10,7 @@ def plotfun():
     glClear(GL_COLOR_BUFFER_BIT) 
     glColor3f(0.0,0.0,0.0)
     glPointSize(3.0)
-    for x in arange(-5.0, 5.0, 0.1):
+    for x in arange(-5.0, 5.0, 0.01):
         y=2*x+7
         glBegin(GL_POINTS)
         glVertex2f(x, y)
