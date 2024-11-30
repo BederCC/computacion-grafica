@@ -3,10 +3,10 @@ from OpenGL.GLUT import *
 from OpenGL.GLU import *
 
 window = 0                                             # glut window number
-width, height = 500, 400                               # window size
+width, height = 600, 300                               # window size
 
 def draw():                                            # ondraw is called all the time
-    glClearColor(0.0, 0.5, 0.0, 1.0) # Establece el color de fondo (negro)
+    glClearColor(0.0, 0.5, 0.0, 1.0) # Establece el color de fondo (verde)
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT) # clear the screen
     glLoadIdentity()                                   # reset position
     # ToDo draw rectangle
