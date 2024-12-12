@@ -7,15 +7,15 @@ from OpenGL.GLUT import *
 from OpenGL.GLU import *
 
 def clearScreen():
-    glClearColor(0.0, 0.0, 0.0, 1.0) #establish the color of the screen (black)
+    glClearColor(0.120, 0.40, 0.60, 1.0) 
     gluOrtho2D(-1.0, 1.0, -1.0, 1.0) #establish the coordinates of the screen
     
 def plot_points(): #function to plot the points
     glClear(GL_COLOR_BUFFER_BIT) #clear the buffer
-    glColor3f(0.0, 1.0, 0.0) #establish the color of the points (green)
-    glPointSize(10.0) #establish the size of the points
+    glColor3f(1.0, 0.4, 0.0) #establish the color of the points (green)
+    glPointSize(25.0) #establish the size of the points
     glBegin(GL_POINTS) #start plotting points
-    glVertex2f(0.0, 0.0) #plot the point at the origin
+    glVertex2f(-0.2, 0.3) #plot the point at the origin
     glEnd() #end plotting points
     glFlush() #execute the commands
     

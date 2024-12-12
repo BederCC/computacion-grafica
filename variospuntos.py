@@ -7,7 +7,7 @@ from OpenGL.GLUT import *
 from OpenGL.GLU import *
 
 def clearScreen():
-    glClearColor(0.0, 0.0, 0.0, 1.0) # Establece el color de fondo (negro)
+    glClearColor(0.244, 0.132, 0.247, 1.0) # Establece el color de fondo (negro)
     gluOrtho2D(-1.0, 1.0, -1.0, 1.0) # Establece las coordenadas del espacio 2D
     
 def plot_points(): # Función para dibujar puntos
@@ -16,11 +16,11 @@ def plot_points(): # Función para dibujar puntos
     
     # Lista de coordenadas y colores (r, g, b)
     points = [
-        ((0.0, 0.0), (1.0, 0.0, 0.0)),   # Rojo
-        ((-0.5, 0.5), (0.0, 1.0, 0.0)),  # Verde
-        ((0.5, -0.5), (0.0, 0.0, 1.0)),  # Azul
-        ((0.7, 0.7), (1.0, 1.0, 0.0)),   # Amarillo
-        ((-0.7, -0.7), (1.0, 0.0, 1.0))  # Magenta
+        ((0.1, 0.2), (1.0, 1.0, 0.0)),   
+        ((-0.3, 0.5), (0.0, 1.0, 1.0)),  
+        ((0.2, -0.5), (0.0, 0.0, 1.0)),  
+        ((0.4, 0.7), (1.0, 0.1, 0.0)),   
+        ((-0.1, -0.7), (1.0, 1.0, 1.0))  
     ]
     
     glBegin(GL_POINTS) # Inicia el dibujo de puntos

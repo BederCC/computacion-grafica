@@ -9,10 +9,10 @@ def init():
 
 def linea():
     glClear(GL_COLOR_BUFFER_BIT)
-    glColor3f(0.0, 1.0, 0.0)
+    glColor3f(0.3, 0.4, 0.6) 
     glBegin(GL_LINES)
-    glVertex2f(20, 15)  # Correcto uso de la función
-    glVertex2f(60, 50)  # Correcto uso de la función
+    glVertex2f(20, 15)
+    glVertex2f(60, 50)
     glEnd() 
     glFlush()
 
