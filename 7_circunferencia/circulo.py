@@ -1,4 +1,3 @@
-
 from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT import *
@@ -21,7 +20,7 @@ def plotfunc():
     glEnd()
     
 # Plot los parametros de la ecuacion 
-    for t in arange(0.0,6.28, 0.001):
+    for t in arange(-6.28,6.28, 0.001):
         x = sin(t)
         y = cos(t)
         glBegin(GL_POINTS) 
