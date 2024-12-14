@@ -8,7 +8,15 @@ import sys
 def init():
     glClearColor(1.0, 1.0, 1.0, 1.0)
     gluOrtho2D(-5.0, 5.0, -5.0, 5.0)
-    
+def keyboard (key, x, y):
+    global color
+    if key == b'r': # Rojo
+        color = [1.0, 0.0, 0.0]
+    elif key ==b'g':
+        color = [0.0, 1.0, 0.0]
+    elif key == b'b':
+        color = [0.0, 0.0, 1.0]
+    glutPostRedisplay()
 def plotfunc():
     glClear (GL_COLOR_BUFFER_BIT) 
     glColor3f(0.0, 0.0, 0.0)
@@ -38,6 +46,7 @@ def main():
     glutInitWindowSize(500,400)
     glutCreateWindow("Grafica de la funcion Seno y Coseno")
     glutDisplayFunc(plotfunc)
+    glutKeyboardFunc(keyboard)
     init()
     glutMainLoop()
 main()
