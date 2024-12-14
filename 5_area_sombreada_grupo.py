@@ -27,7 +27,7 @@ def plotfunc():
         y_line = x + 2
         if y_parabola < y_line:
             for y in arange(y_parabola, y_line, 0.01):
-                glColor3f(0.50, 0.50, 0.50)
+                glColor3f(0.90, 0.50, 0.50)
                 glBegin(GL_POINTS)
                 glVertex2f(x, y)
                 glEnd()
@@ -47,7 +47,6 @@ def plotfunc():
     glVertex2f(-5.0, -3.0)
     glVertex2f(5.0, 7.0)
     glEnd()
-    
     glFlush()
 
 def main():
