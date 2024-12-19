@@ -12,9 +12,9 @@ def keyboard (key, x, y):
     global color
     if key == b'r': # Rojo
         color = [1.0, 0.0, 0.0]
-    elif key ==b'g':
+    elif key ==b'g': # verde
         color = [0.0, 1.0, 0.0]
-    elif key == b'b':
+    elif key == b'b': # azul
         color = [0.0, 0.0, 1.0]
     glutPostRedisplay()
 def plotfunc():

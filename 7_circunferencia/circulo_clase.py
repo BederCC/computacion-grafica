@@ -23,7 +23,7 @@ def plotfunc():
 
     # Dibujar la curva de Lissajous
     glBegin(GL_POINTS)
-    for t in arange(-6.28, 6.28, 0.01):
+    for t in arange(-6.28, 6.28, 0.001):
         x = cos(3 * t)
         y = sin(5 * t)
         glVertex2f(x, y)

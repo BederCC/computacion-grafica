@@ -40,7 +40,7 @@ var
 		shader_const_mat4 + "v=mat4(1,0,0,0,0,.707,.707,0,0,-.707,.707,0,0,-22.627,-22.627,1);" + // view
 		shader_const_mat4 + "r=mat4(.977,0,0,0,0,1.303,0,0,0,0,-1,-1,0,0,-2,0);"+ // projection
 		"void main(void){" +
-			"vl=vec3(1,1,1);" + // ambient color(0.3,0.3,0.6)
+			"vl=vec3(0.8,0.8,1.0);" + // ambient color(0.3,0.3,0.6)
 			"for(int i=0; i<"+max_lights+"; i++) {"+
 				"vec3 lp=vec3(l[i*7],l[i*7+1],l[i*7+2]);" + // light position
 				"vl+=vec3(l[i*7+3],l[i*7+4],l[i*7+5])" + // light color *
