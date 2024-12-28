@@ -1,16 +1,15 @@
 from OpenGL.GL import *
 from OpenGL.GLUT import *
-from OpenGL.GLUT import *
 import math
 
 # Window dimensions
 w, h = 500, 500
 
 def draw_hexagon(x, y, size):
-    """Draws a hexagon centered at (x, y) with the given size."""
+    """Draws a hexagon centered at (x, y) with the given size, rotated 90 degrees."""
     glBegin(GL_POLYGON)
     for i in range(6):
-        angle = math.radians(i * 60)
+        angle = math.radians(i * 60 + 90)  # Rotate each vertex by 90 degrees
         glVertex2f(x + size * math.cos(angle), y + size * math.sin(angle))
     glEnd()
 
@@ -19,8 +18,19 @@ def draw_honeycomb():
     size = 50  # Size of each hexagon
     offset = size * math.sqrt(3)  # Distance between hexagon centers
 
+    # Define a list of colors for each hexagon
+    colors = [
+        (1, 0, 0),      # Red
+        (0, 1, 0),      # Green
+        (0, 0, 1),      # Blue
+        (1, 1, 0),      # Yellow
+        (1, 0, 1),      # Magenta
+        (0, 1, 1),      # Cyan
+        (1, 0.5, 0)     # Orange
+    ]
+
     # Central hexagon
-    glColor3f(1, 0.5, 0)  # Orange color
+    glColor3f(*colors[0])  # Use the first color
     draw_hexagon(250, 250, size)
 
     # Surrounding hexagons
@@ -34,7 +44,7 @@ def draw_honeycomb():
     ]
 
     for i, (x, y) in enumerate(positions):
-        glColor3f((i + 1) % 2, (i + 2) % 2, (i + 3) % 2)  # Different colors
+        glColor3f(*colors[i + 1])  # Assign each surrounding hexagon a different color
         draw_hexagon(x, y, size)
 
 def iterate():
