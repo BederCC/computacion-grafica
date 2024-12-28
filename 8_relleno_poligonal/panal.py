@@ -55,6 +55,11 @@ def iterate():
     glMatrixMode(GL_MODELVIEW)
     glLoadIdentity()
 
+    # Apply a 90-degree rotation around the center (250, 250)
+    glTranslatef(250, 250, 0)  # Move to the center
+    glRotatef(90, 0, 0, 1)     # Rotate by 90 degrees around the Z axis
+    glTranslatef(-250, -250, 0)  # Move back to the original position
+
 def showScreen():
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
     glLoadIdentity()
