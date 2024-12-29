@@ -40,11 +40,9 @@ class GLCamera():
         c = np.cos(self.rot[1] * (np.pi / 180))
         s = np.sin(self.rot[1] * (np.pi / 180))
         m1 = np.array([[c, 0, s], [0, 1, 0], [-s, 0, c]])
-        
         c = np.cos(self.rot[0] * (np.pi / 180))
         s = np.sin(self.rot[0] * (np.pi / 180))
         m2 = np.array([[1, 0, 0], [0, c, -s], [0, s, c]])
-        
         m = m1.dot(m2)
         return m
 
@@ -82,13 +80,11 @@ def main():
         glLoadIdentity()
         gluPerspective(45, (display[0] / display[1]), 0.1, 50.0) 
         camera.add_to_scene()
-        
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
             camera.handle_camera_events(event)
-
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
         Cuadrado()
         pygame.display.flip()
