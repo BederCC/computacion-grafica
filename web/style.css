@@ -77,3 +77,9 @@ button {
 button:hover {
     background-color: #555;
 }
+
+#inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
