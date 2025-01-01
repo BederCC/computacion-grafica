@@ -1,7 +1,7 @@
 from OpenGL.GL import *
 from OpenGL.GLUT import *
 from OpenGL.GLU import *
-
+# inicializa la ventana
 def init():
     glClearColor(0.0, 0.0, 0.0, 0.0) 
     glMatrixMode(GL_PROJECTION) 
