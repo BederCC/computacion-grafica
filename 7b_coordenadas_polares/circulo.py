@@ -1,10 +1,3 @@
-
-    
-#encuentra el error en el código y corrígelo
-#El error en el código es que la función drawFunc() está dentro de la función drawCircle(), por lo que no se ejecuta.
-#corrigelo
-
-#El código corregido es el siguiente:
 import math
 from OpenGL.GL import *
 from OpenGL.GLU import *
