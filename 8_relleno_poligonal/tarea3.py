@@ -2,7 +2,7 @@ from OpenGL.GL import *
 from OpenGL.GLUT import *
 from OpenGL.GLU import *
 
-w, h = 500, 5000
+w, h = 500, 500
 
 def draw_star_polygon():
     glColor3f(0.2, 0.7, 0.9)
