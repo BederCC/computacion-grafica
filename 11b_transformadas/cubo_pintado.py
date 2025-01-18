@@ -27,13 +27,14 @@ caras = (
 
 # Colores para cada cara del cubo
 colores = [
-    (1.0, 0.0, 0.0),  # Rojo
-    (0.0, 1.0, 0.0),  # Verde
-    (0.0, 0.0, 1.0),  # Azul
-    (1.0, 1.0, 0.0),  # Amarillo
-    (1.0, 0.0, 1.0),  # Magenta
-    (0.0, 1.0, 1.0)   # Cian
+    (1.0, 0.5, 0.5),  # Rojo pastel
+    (0.5, 1.0, 0.5),  # Verde pastel
+    (0.5, 0.5, 1.0),  # Azul pastel
+    (1.0, 1.0, 0.5),  # Amarillo pastel
+    (1.0, 0.5, 1.0),  # Magenta pastel
+    (0.5, 1.0, 1.0)   # Cian pastel
 ]
+
 
 # Función para dibujar el cubo con colores
 def Cubo():
@@ -55,15 +56,15 @@ def EjesCoordenadas():
 
     # Eje Y (verde)
     glColor3f(1.0, 1.0, 1.0)
-    glVertex3f(-1.5, -5, 0)
-    glVertex3f(-1.5, 5, 0)
+    glVertex3f(-2, -5, 0)
+    glVertex3f(-2, 5, 0)
 
     glEnd()
 
 # Función principal
 def main():
     pygame.init()
-    display = (800, 600)
+    display = (900, 700)
     pygame.display.set_mode(display, DOUBLEBUF | OPENGL)
     gluPerspective(45, (display[0] / display[1]), 0.1, 50.0)
     glTranslatef(0.0, 0.0, -5)
@@ -80,7 +81,7 @@ def main():
 
         # Dibuja los ejes de coordenadas
         glPushMatrix()
-        
+        EjesCoordenadas()
         glPopMatrix()
         
         # Dibuja el cubo girando alrededor de su centro
