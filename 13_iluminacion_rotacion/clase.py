@@ -78,3 +78,5 @@ while run:
     pygame.time.wait(10)
 
 pygame.quit()
+
+#pip install --upgrade numpy PyOpenGL PyOpenGL_accelerate
