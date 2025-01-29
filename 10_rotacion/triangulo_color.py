@@ -38,6 +38,19 @@ def dibujar_bordes():
             glVertex3fv(vertices[vertice])  # Dibuja cada borde del triángulo
     glEnd()  # Finaliza el dibujo de líneas
 
+# Función para dibujar los ejes de coordenadas
+def dibujar_ejes():
+    glBegin(GL_LINES)  # Inicia el modo de dibujo de líneas en OpenGL
+    # Eje x
+    glColor3f(1.0, 1.0, 1.0)  # Color rojo para el eje x
+    glVertex3f(-5.0, 0.0, 0.0)
+    glVertex3f(5.0, 0.0, 0.0)
+    # Eje y
+    glColor3f(1.0, 1.0, 1.0)  # Color verde para el eje y
+    glVertex3f(0.0, -5.0, 0.0)
+    glVertex3f(0.0, 5.0, 0.0)
+    glEnd()  # Finaliza el dibujo de líneas
+
 # Función para rotar el triángulo según un ángulo dado
 def rotar_triangulo(angle):
     glRotatef(angle, 0, 1, 0)  # Aplica una rotación al triángulo alrededor del eje y
@@ -50,6 +63,8 @@ def main():
     gluPerspective(45, (display[0] / display[1]), 0.1, 50.0)  # Establece la perspectiva de visualización
     glTranslatef(0.0, 0.0, -5)  # Traslada la escena en el eje z hacia adelante
     
+    angle = 0  # Ángulo inicial de rotación
+    
     while True:
         for event in pygame.event.get():  # Manejo de eventos de pygame
             if event.type == pygame.QUIT:  # Si se cierra la ventana
@@ -57,9 +72,20 @@ def main():
                 quit()
         
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)  # Limpia el buffer de color y profundidad
+        
+        # Dibuja los ejes de coordenadas en su posición fija
+        dibujar_ejes()
+        
+        # Guarda la matriz de transformaciones actual, rota y dibuja el triángulo, y restaura la matriz
+        glPushMatrix()
+        glTranslatef(0, 0, 0)  # Traslada el triángulo al origen
+        glRotatef(angle, 0, 1, 0)  # Aplica una rotación al triángulo
         dibujar_triangulo()  # Dibuja el triángulo en su posición actual
         dibujar_bordes()  # Dibuja los bordes del triángulo
-        rotar_triangulo(1)  # Aplica una rotación al triángulo (1 grado por iteración)
+        glPopMatrix()
+        
+        angle += 1  # Incrementa el ángulo de rotación
+        
         pygame.display.flip()  # Actualiza la ventana con el contenido dibujado
         pygame.time.wait(10)  # Espera un breve lapso de tiempo antes de la próxima iteración
 
