@@ -61,8 +61,16 @@ class Planetario(object):
         self.angulo = 0
         self.distancia = 20
         self.iluminacion = Luz(GL_LIGHT0, (15, 5, 15, 1))
-        # Crear la esfera
-        self.esfera = Esfera(2, (0, 0, 0), (1, 1, 0, 1))
+        # Crear las esferas (planetas)
+        self.planetas = [
+            Esfera(0.5, (4, 0, 0), (0.8, 0.4, 0.1, 1.0)),  # Planeta 1 café
+            Esfera(0.7, (6, 0, 0), (1.0, 0.75, 0.0, 1.0)),  # Planeta 2 ámbar
+            Esfera(0.3, (5, 0, 0), (1.0, 1.0, 0.6, 1.0)),  # Planeta 3 amarillo
+            Esfera(0.3, (7, 0, 0), (0.2, 0.6, 0.8, 1.0)),  # Planeta 4 azul
+            Esfera(0.3, (8, 0, 0), (0.5, 0.0, 0.4, 1.0)),  # Planeta 5 morado
+            Esfera(0.3, (9, 0, 0), (0.75, 0.0, 1.0, 1.0)),  # Planeta 6 púrpura
+            Esfera(0.3, (3, 0, 0), (0.2, 0.8, 0.2, 1.0))   # Planeta 7 verde
+        ]
 
     def iniciar(self):
         glutInit()
@@ -81,6 +89,7 @@ class Planetario(object):
         glMatrixMode(GL_MODELVIEW)
         glutDisplayFunc(self.dibujar)
         glutSpecialFunc(self.keyboard)
+        glutIdleFunc(self.actualizar)
         glutMainLoop()
 
     def dibujar(self):
@@ -91,7 +100,11 @@ class Planetario(object):
         gluLookAt(x, 0, 2, 0, 0, 0, 0, 1, 0)
 
         self.iluminacion.iluminar()
-        self.esfera.dibujar()
+
+        # Dibujar cada planeta
+        for planeta in self.planetas:
+            planeta.dibujar()
+
         glutSwapBuffers()
 
     def keyboard(self, tecla, x, y):
@@ -109,6 +122,9 @@ class Planetario(object):
             self.iluminacion.cambiar_color()
         self.distancia = max(10, min(self.distancia, 20))
         self.angulo %= math.pi * 2
+        glutPostRedisplay()
+
+    def actualizar(self):
         glutPostRedisplay()
 
 if __name__ == '__main__':
