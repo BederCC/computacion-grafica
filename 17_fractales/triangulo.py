@@ -61,7 +61,7 @@ def main():
     glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE)
     glutInitWindowSize(width, height)
     glutInitWindowPosition(100, 100)
-    glutCreateWindow("Triángulo de Sierpinski con OpenGL")
+    glutCreateWindow(b"Triangulo de Sierpinski con OpenGL")  # Asegurarse de que el título sea un string tipo bytes
 
     init()
     glutReshapeFunc(reshape)
