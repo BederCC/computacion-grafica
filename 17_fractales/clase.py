@@ -26,7 +26,7 @@ p2 = (1, 0)
 p3 = (0.5, 0.866)  # Altura del triángulo equilátero
 
 # Nivel de profundidad del fractal
-depth = 1  # Ajusta este valor para cambiar la cantidad de subdivisiones
+depth = 5  # Ajusta este valor para cambiar la cantidad de subdivisiones
 
 # Crea la figura y llama a la función para dibujar el fractal
 plt.figure(figsize=(8, 8))

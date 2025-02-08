@@ -23,7 +23,7 @@ def draw_flower(center, size, depth, scale_factor=1.6):
         pentagon_points = pentagon(center, size)
         for i in range(5):
             new_center = pentagon_points[i]  # Nuevo centro es una esquina del pentágono central
-            draw_flower(new_center, size / 2.6, depth - 1, scale_factor)  # Llamada recursiva con tamaño reducido
+            draw_flower(new_center, size / 2.5, depth - 1, scale_factor)  # Llamada recursiva con tamaño reducido
 
 # Configuración de la figura
 plt.figure(figsize=(8, 8))
